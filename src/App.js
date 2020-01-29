@@ -27,12 +27,25 @@ function App() {
 		setCart([...cart, item]);
 	};
 
+	//remove item function 
+	const removeItem = itemId => {
+		setCart(cart.filter(cartItem => cartItem.id !== itemId));
+	}
+
+	// clear cart of items 
+
+	const [clear] = useState([]);
+
+	const clearCart = () => {
+		setCart(clear);
+	}
+
 	return (
 		<div className="App">
 
 			{/* product context wraps all my child components inside and passes a prop value*/}
 			<ProductContext.Provider value={{ products, addItem }}>
-			<CartContext.Provider value={{cart}}>
+			<CartContext.Provider value={{cart, removeItem, setCart}}>
 			<Navigation cart={cart} />
 
 			{/* Routes */}
