@@ -8,6 +8,8 @@ import { ProductContext } from '../contexts/ProductContext';
 
 const Products = () => {
 
+	// step 4 
+	// consuming data with product context
 	const { products, addItem } = useContext(ProductContext);
 
 	return (
