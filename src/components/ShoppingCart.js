@@ -9,7 +9,6 @@ import { CartContext } from '../contexts/CartContext';
 const ShoppingCart = () => {
 
 	const {cart, removeItem, clearCart} = useContext(CartContext);
-
 	
 
 	const getCartTotal = () => {
