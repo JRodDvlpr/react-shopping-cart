@@ -19,10 +19,6 @@ function App() {
 	// keep track of all items in cart
 	const [cart, setCart] = useState([]);
 
-
-	// clears items in cart
-	const [clear] = useState([]);
-
 	const addItem = item => {
 		// add the given item to the cart
 
@@ -36,16 +32,14 @@ function App() {
 		setCart(cart.filter(cartItem => cartItem.id !== itemId));
 	}
 
-	const clearCart = () => {
-		setCart(clear);
-	}
+	
 
 	return (
 		<div className="App">
 
 			{/* product context wraps all my child components inside and passes a prop value*/}
 			<ProductContext.Provider value={{ products, addItem }}>
-			<CartContext.Provider value={{cart, setCart, removeItem, clearCart}}>
+			<CartContext.Provider value={{cart, setCart, removeItem}}>
 			<Navigation cart={cart} />
 
 			{/* Routes */}
